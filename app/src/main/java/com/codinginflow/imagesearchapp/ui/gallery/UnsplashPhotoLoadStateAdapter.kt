@@ -10,7 +10,6 @@ import com.codinginflow.imagesearchapp.databinding.UnsplashPhotoLoadStateFooterB
 class UnsplashPhotoLoadStateAdapter(internal val retry: () -> Unit) :
     LoadStateAdapter<LoadStateViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState) = LoadStateViewHolder(
         UnsplashPhotoLoadStateFooterBinding.inflate(
             LayoutInflater.from(parent.context),

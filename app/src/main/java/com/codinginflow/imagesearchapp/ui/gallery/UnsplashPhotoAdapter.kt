@@ -23,8 +23,8 @@ class UnsplashPhotoAdapter(val listener: OnItemClickListener) :
     }
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
-        getItem(position)?.let { currentItem -> holder.bind(currentItem)
-
+        getItem(position)?.let { currentItem ->
+            holder.bind(currentItem)
         }
     }
 
@@ -32,4 +32,4 @@ class UnsplashPhotoAdapter(val listener: OnItemClickListener) :
     interface OnItemClickListener {
         fun onItemClick(photo: UnsplashPhoto?)
     }
-    }
+}

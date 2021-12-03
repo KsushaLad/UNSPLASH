@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -163,7 +162,8 @@
         app:layout_constraintEnd_toStartOf="@id/animals"
         app:layout_constraintStart_toStartOf="@id/car"
         app:layout_constraintTop_toBottomOf="@id/car">
-
+        <!-- TODO Убери отовсюду жесткие размеры в тегах layout_width и layout_height, такого быть не должго.
+               Инфче верстка е будут динамической-->
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/cardView_height"

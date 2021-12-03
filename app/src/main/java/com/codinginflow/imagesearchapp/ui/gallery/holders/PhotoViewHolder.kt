@@ -8,15 +8,12 @@ import com.codinginflow.imagesearchapp.ui.gallery.UnsplashPhotoAdapter
 
 class PhotoViewHolder(
     private val binding: ItemUnsplashPhotoBinding,
-    val listener : UnsplashPhotoAdapter.OnItemClickListener
-    ) :
-    RecyclerView.ViewHolder(binding.root) {
-
-
+    val listener: UnsplashPhotoAdapter.OnItemClickListener
+) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(photo: UnsplashPhoto) {
         binding.apply {
-        imgImagePreview.loadingView(photo)
+            imgImagePreview.loadingView(photo)
             textViewUserName.text = photo.user.username
             root.setOnClickListener {
                 val position = bindingAdapterPosition

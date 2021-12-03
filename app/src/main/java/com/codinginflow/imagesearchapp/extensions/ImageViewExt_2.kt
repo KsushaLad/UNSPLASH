@@ -7,7 +7,7 @@ import com.codinginflow.imagesearchapp.data.UnsplashPhoto
 
 import kotlinx.android.synthetic.main.fragment_details.view.*
 
-
+// TODO надо избавиться от этого файла
 //Extension UnsplashPhotoAdapter
 fun ImageView.loadingView(photo: UnsplashPhoto) {
     Glide.with(this@loadingView)

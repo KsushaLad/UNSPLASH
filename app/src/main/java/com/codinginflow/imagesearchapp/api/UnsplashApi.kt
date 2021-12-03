@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface UnsplashApi {
 
-
+    // TODO search/photos надо вынести companion object
     @Headers("Accept-Version: v1", "Authorization: Client-ID $UNSPLASH_ACCESS_KEY")
     @GET("search/photos")
     suspend fun searchPhotos(

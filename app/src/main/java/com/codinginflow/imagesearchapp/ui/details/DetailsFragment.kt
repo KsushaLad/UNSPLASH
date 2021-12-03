@@ -45,7 +45,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         }
     }
 
-    private fun loadingAllInDetailFragment(photo: UnsplashPhoto){
+    private fun loadingAllInDetailFragment(photo: UnsplashPhoto) {
         imgImagePreview.loading(photo)
         text_view_creator.isVisible = true
         text_view_description.isVisible = photo.description != null
@@ -64,17 +64,16 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         }
     }
 
-
     @SuppressLint("SetTextI18n", "StringFormatInvalid")
     private fun createLinkToUnsplash(intent: Intent) {
         text_view_creator.apply {
-            text = getString(photo_by_on_Unsplash).plus(" ").plus(args.photo.user.name).plus(" ").plus(getString(photo_by_on_Unsplash1))
+            text = getString(photo_by_on_Unsplash).plus(" ").plus(args.photo.user.name).plus(" ")
+                .plus(getString(photo_by_on_Unsplash1))
             setOnClickListener {
                 context.startActivity(intent)
             }
             paint.isUnderlineText = true
         }
-
     }
 }
 

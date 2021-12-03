@@ -25,7 +25,9 @@ import kotlinx.android.synthetic.main.unsplash_photo_load_state_footer.view.*
 
 import kotlinx.android.synthetic.main.fragment_details.view.progress_bar as progress_bar1
 
-
+// TODO ачем ты создала 2 отдельных файла с разными названиями? Надо сделать все в одном файле с одним именем.
+//  Так же я бы не передавал сюда модель целиком, а закиывал только параметры которые тебе нужны. Тогда ты сможешь
+//  создать функции с одним именем, то есть просто переопределить фкнцию с другими параметрами
 //Extension DetailsFragment
 fun ImageView.loading(photo: UnsplashPhoto) {
     Glide.with(this)
