@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,10 +15,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/nature"
-        android:layout_width="@dimen/width_card"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/layout_marginStart"
         android:layout_marginTop="@dimen/margin"
+
+        android:paddingBottom="10dp"
         app:cardCornerRadius="@dimen/cardCornerRadius"
         app:layout_constraintBottom_toTopOf="@id/car"
         app:layout_constraintEnd_toStartOf="@id/bus"
@@ -28,23 +29,29 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
+            android:layout_height="wrap_content"
             android:background="@drawable/gradient_1"
             android:gravity="end"
             android:paddingTop="@dimen/cardCornerRadius"
             android:paddingEnd="@dimen/layout_marginStart"
+            android:paddingBottom="10dp"
             android:text="@string/_3d"
+
             android:textColor="@color/black"
-            android:textSize="@dimen/textSize"
+
+            android:textSize="15dp"
             tools:ignore="RtlSymmetry,SpUsage" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/imageview_width"
-            android:layout_height="@dimen/imageview_width"
-            android:layout_marginStart="@dimen/layout_marginTop"
-            android:layout_marginTop="@dimen/layout_marginBottom"
-            android:layout_marginBottom="@dimen/layout_marginBottom"
-            android:src="@drawable/camera_icon_188570" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintDimensionRatio="3:4"
+
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_camera" />
+
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -54,6 +61,8 @@
         android:layout_marginStart="@dimen/layout_marginStart"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="@dimen/layout_marginStart"
+        android:layout_marginBottom="@dimen/layout_marginStart"
+        android:paddingBottom="10dp"
         android:background="@color/white"
         app:cardCornerRadius="@dimen/cardCornerRadius"
         app:layout_constraintBottom_toTopOf="@id/train"
@@ -63,23 +72,25 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
+            android:layout_height="wrap_content"
             android:background="@drawable/gradient_1"
             android:gravity="end"
             android:paddingTop="@dimen/cardCornerRadius"
             android:paddingEnd="@dimen/layout_marginStart"
+
+            android:paddingBottom="10dp"
             android:text="@string/textures"
             android:textColor="@color/black"
-            android:textSize="@dimen/textSize"
-            tools:ignore="RtlSymmetry" />
+            android:textSize="15dp"
+            tools:ignore="RtlSymmetry,SpUsage" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/imageview_width"
-            android:layout_height="@dimen/imageview_width"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_marginTop"
             android:layout_marginTop="@dimen/layout_marginBottom"
             android:layout_marginBottom="@dimen/layout_marginBottom"
-            android:src="@drawable/pen" />
+            android:src="@drawable/ic_photograph_pictures" />
     </com.google.android.material.card.MaterialCardView>
 
 
@@ -89,6 +100,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/layout_marginStart"
         android:layout_marginBottom="@dimen/layout_marginBottom"
+
+        android:paddingBottom="10dp"
         android:background="@color/white"
         app:cardCornerRadius="@dimen/cardCornerRadius"
         app:layout_constraintBottom_toTopOf="@id/trending"
@@ -98,23 +111,25 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
+            android:layout_height="wrap_content"
             android:background="@drawable/gradient_1"
             android:gravity="end"
             android:paddingTop="@dimen/cardCornerRadius"
             android:paddingEnd="@dimen/layout_marginStart"
+            android:paddingBottom="10dp"
+
             android:text="@string/nature"
             android:textColor="@color/black"
-            android:textSize="@dimen/textSize"
-            tools:ignore="RtlSymmetry" />
+            android:textSize="15dp"
+            tools:ignore="RtlSymmetry,SpUsage" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/imageview_width"
-            android:layout_height="@dimen/imageview_width"
-            android:layout_marginStart="@dimen/layout_marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="@dimen/layout_marginBottom"
             android:layout_marginBottom="@dimen/layout_marginBottom"
-            android:src="@drawable/palm" />
+            android:src="@drawable/ic_palm_s" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -124,6 +139,8 @@
         android:layout_marginStart="@dimen/layout_marginStart"
         android:layout_marginTop="@dimen/layout_marginStart"
         android:layout_marginBottom="@dimen/layout_marginBottom"
+
+        android:paddingBottom="10dp"
         android:background="@color/white"
         app:cardCornerRadius="@dimen/cardCornerRadius"
         app:layout_constraintEnd_toEndOf="@id/bus"
@@ -132,23 +149,24 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
+            android:layout_height="match_parent"
             android:background="@drawable/gradient_1"
             android:gravity="end"
             android:paddingTop="@dimen/cardCornerRadius"
+            android:paddingBottom="10dp"
             android:paddingEnd="@dimen/layout_marginStart"
             android:text="@string/food"
             android:textColor="@color/black"
-            android:textSize="@dimen/textSize"
-            tools:ignore="RtlSymmetry" />
+            android:textSize="15dp"
+            tools:ignore="RtlSymmetry,SpUsage" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/imageview_width"
-            android:layout_height="@dimen/imageview_width"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_marginTop"
             android:layout_marginTop="@dimen/layout_marginBottom"
             android:layout_marginBottom="@dimen/layout_marginBottom"
-            android:src="@drawable/cake" />
+            android:src="@drawable/ic_ice_cream" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -159,6 +177,7 @@
         android:layout_marginBottom="@dimen/margin_top"
         android:background="@color/white"
         android:backgroundTint="@color/white"
+        android:paddingBottom="10dp"
         app:cardCornerRadius="@dimen/cardCornerRadius"
         app:layout_constraintEnd_toStartOf="@id/animals"
         app:layout_constraintStart_toStartOf="@id/car"
@@ -166,23 +185,24 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
+            android:layout_height="match_parent"
             android:background="@drawable/gradient_1"
             android:gravity="end"
             android:paddingTop="@dimen/cardCornerRadius"
+            android:paddingBottom="10dp"
             android:paddingEnd="@dimen/layout_marginStart"
             android:text="@string/travel"
             android:textColor="@color/black"
-            android:textSize="@dimen/textSize"
-            tools:ignore="RtlSymmetry" />
+            android:textSize="15dp"
+            tools:ignore="RtlSymmetry,SpUsage" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/imageview_width"
-            android:layout_height="@dimen/imageview_width"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_marginTop"
             android:layout_marginTop="@dimen/layout_marginBottom"
             android:layout_marginBottom="@dimen/layout_marginBottom"
-            android:src="@drawable/wave_98415" />
+            android:src="@drawable/ic_travel" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -193,6 +213,7 @@
         android:layout_marginLeft="@dimen/layout_marginTop"
         android:layout_marginTop="@dimen/layout_marginStart"
         android:layout_marginBottom="@dimen/layout_marginStart"
+        android:paddingBottom="10dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="@dimen/cardCornerRadius"
@@ -203,23 +224,24 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
+            android:layout_height="match_parent"
             android:background="@drawable/gradient_1"
             android:gravity="end"
             android:paddingTop="@dimen/cardCornerRadius"
             android:paddingEnd="@dimen/layout_marginStart"
+            android:paddingBottom="10dp"
             android:text="@string/animals"
             android:textColor="@color/black"
-            android:textSize="@dimen/layout_marginStart"
+            android:textSize="15dp"
             tools:ignore="RtlSymmetry,SpUsage" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/imageview_width"
-            android:layout_height="@dimen/imageview_width"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_marginTop"
             android:layout_marginTop="@dimen/layout_marginBottom"
             android:layout_marginBottom="@dimen/layout_marginBottom"
-            android:src="@drawable/animal_panda_2737" />
+            android:src="@drawable/ic_teddy_bear" />
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView

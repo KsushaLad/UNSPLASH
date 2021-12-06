@@ -23,14 +23,12 @@ import com.codinginflow.imagesearchapp.enums.QueryForSearch
 
 @AndroidEntryPoint
 class GalleryFragment : Fragment(R.layout.fragment_gallery),
-    UnsplashPhotoAdapter.OnItemClickListener{
+    UnsplashPhotoAdapter.OnItemClickListener {
 
     private val viewModel by viewModels<GalleryViewModel>()
 
     private var _binding: FragmentGalleryBinding? = null
     private val binding get() = _binding
-
-
 
 
     private lateinit var textChangeCountDownJob: Job
@@ -48,7 +46,7 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
 
     private fun bindingGalleryFragment(unsplashPhotoAdapter: UnsplashPhotoAdapter) {
         binding?.apply {
-            recyclerView?.setHasFixedSize(true)
+            recyclerView.setHasFixedSize(true)
             recyclerView.itemAnimator = null
             recyclerView.adapter = unsplashPhotoAdapter.withLoadStateHeaderAndFooter(
                 header = UnsplashPhotoLoadStateAdapter { unsplashPhotoAdapter.retry() },
@@ -79,36 +77,35 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
         }
     }
 
-
     private fun buttonsCategory() {
         binding?.nature?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.d3.toString())
+            viewModel.searchPhotos(QueryForSearch.D3.toString())
         }
 
         binding?.bus?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.textures.toString())
+            viewModel.searchPhotos(QueryForSearch.TEXTURES.toString())
         }
 
         binding?.car?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.nature.toString())
+            viewModel.searchPhotos(QueryForSearch.NATURE.toString())
         }
 
         binding?.train?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.food.toString())
+            viewModel.searchPhotos(QueryForSearch.FOOD.toString())
         }
 
         binding?.trending?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.travel.toString())
+            viewModel.searchPhotos(QueryForSearch.TRAVEL.toString())
         }
 
         binding?.animals?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.animals.toString())
+            viewModel.searchPhotos(QueryForSearch.ANIMALS.toString())
         }
     }
 
@@ -133,7 +130,7 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                if(::textChangeCountDownJob.isInitialized)
+                if (::textChangeCountDownJob.isInitialized)
                     textChangeCountDownJob.cancel()
 
                 textChangeCountDownJob = lifecycleScope.launch {
@@ -147,23 +144,23 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if(::textChangeCountDownJob.isInitialized)
-                     textChangeCountDownJob.cancel()
-                     textChangeCountDownJob = lifecycleScope.launch {
+                if (::textChangeCountDownJob.isInitialized)
+                    textChangeCountDownJob.cancel()
+                textChangeCountDownJob = lifecycleScope.launch {
                     delay(1500)
-                         if (newText != null) {
-                             if (newText.isEmpty()) {
-                                 viewModel.searchPhotos("new")
-                                 searchView.clearFocus()
-                             }
-                         }
+                    if (newText != null) {
+                        if (newText.isEmpty()) {
+                            viewModel.searchPhotos("new")
+                            searchView.clearFocus()
+                        }
+                    }
                 }
                 return false
             }
         })
-   }
+    }
 
-        override fun onDestroyView() {
+    override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }

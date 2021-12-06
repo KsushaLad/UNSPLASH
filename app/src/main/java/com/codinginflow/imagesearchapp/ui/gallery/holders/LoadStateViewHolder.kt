@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.codinginflow.imagesearchapp.databinding.UnsplashPhotoLoadStateFooterBinding
 import com.codinginflow.imagesearchapp.ui.gallery.UnsplashPhotoLoadStateAdapter
 
-class LoadStateViewHolder(private val binding: UnsplashPhotoLoadStateFooterBinding) : RecyclerView.ViewHolder(binding.root) {
+class LoadStateViewHolder(private val binding: UnsplashPhotoLoadStateFooterBinding) :
+    RecyclerView.ViewHolder(binding.root) {
     constructor(binding: UnsplashPhotoLoadStateFooterBinding, retry: () -> Unit) : this(binding)
 
-    val unsplashPhotoLoadStateAdapter : UnsplashPhotoLoadStateAdapter? = null
+    val unsplashPhotoLoadStateAdapter: UnsplashPhotoLoadStateAdapter? = null
 
     init {
         binding.buttonRetry.setOnClickListener {

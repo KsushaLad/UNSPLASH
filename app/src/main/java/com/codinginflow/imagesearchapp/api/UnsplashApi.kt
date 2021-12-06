@@ -8,9 +8,12 @@ import retrofit2.http.Query
 
 interface UnsplashApi {
 
+    companion object{
+        const val search: String = "search/photos"
+    }
 
     @Headers("Accept-Version: v1", "Authorization: Client-ID $UNSPLASH_ACCESS_KEY")
-    @GET("search/photos")
+    @GET(search)
     suspend fun searchPhotos(
         @Query("query") query: String,
         @Query("page") page: Int,

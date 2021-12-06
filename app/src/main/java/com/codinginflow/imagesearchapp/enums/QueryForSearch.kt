@@ -1,13 +1,14 @@
 package com.codinginflow.imagesearchapp.enums
 
+
 enum class QueryForSearch {
 
-    d3,
-    textures,
-    nature,
-    food,
-    travel,
-    animals
+    D3,
+    TEXTURES,
+    NATURE,
+    FOOD,
+    TRAVEL,
+    ANIMALS
 
 
 }
