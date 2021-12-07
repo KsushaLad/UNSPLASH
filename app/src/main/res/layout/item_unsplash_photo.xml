@@ -14,12 +14,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/layout_marginEnd"
         android:layout_alignTop="@id/relative_layout"
         android:layout_alignBottom="@id/relative_layout"
         android:background="@drawable/item"
         app:layout_constraintDimensionRatio="6:8"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="@dimen/layout_marginTop"
         tools:ignore="MissingConstraints,NotSibling"
         android:backgroundTint="@color/white">
 

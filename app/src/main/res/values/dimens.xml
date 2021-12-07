@@ -31,5 +31,6 @@
     <dimen name="width">1dp</dimen>
     <dimen name="wigth_smile">24dp</dimen>
     <dimen name="radiuss">900dp</dimen>
+    <dimen name="guide">195dp</dimen>
 
 </resources>

@@ -3,7 +3,7 @@ package com.codinginflow.imagesearchapp.ui.gallery.holders
 import androidx.recyclerview.widget.RecyclerView
 import com.codinginflow.imagesearchapp.data.UnsplashPhoto
 import com.codinginflow.imagesearchapp.databinding.ItemUnsplashPhotoBinding
-import com.codinginflow.imagesearchapp.loading
+import com.codinginflow.imagesearchapp.extensions.loading
 
 import com.codinginflow.imagesearchapp.ui.gallery.UnsplashPhotoAdapter
 

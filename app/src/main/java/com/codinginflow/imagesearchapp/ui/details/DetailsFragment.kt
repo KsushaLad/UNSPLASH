@@ -18,8 +18,7 @@ import java.io.IOException
 import com.codinginflow.imagesearchapp.scale.MyScaleGestures
 import com.codinginflow.imagesearchapp.R.string.*
 import com.codinginflow.imagesearchapp.data.UnsplashPhoto
-import com.codinginflow.imagesearchapp.loading
-import kotlinx.android.synthetic.main.unsplash_photo_load_state_footer.view.*
+import com.codinginflow.imagesearchapp.extensions.loading
 
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
