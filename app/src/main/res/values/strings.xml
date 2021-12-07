@@ -10,6 +10,7 @@
     <string name="textures">Textures</string>
     <string name="_3d">3D</string>
     <string name="search">search</string>
+    <string name="done">DONE</string>
     <string name="results_could_not_be_loaded">Results could not be loaded</string>
     <string name="retry">Retry</string>
     <string name="no_results_found_for_this_query">No results found for this query</string>
