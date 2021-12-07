@@ -43,12 +43,15 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         }
     }
 
+    // TODO почему ты в одном и том же методе делаешь 2 разных подходы для одного и тоже же?
+    //  Если мы уже используем Kotlin, то надо использовать везде isVisible
     private fun loadingAllInDetailFragment(photo: UnsplashPhoto) {
         imgImagePreview.loading(photo)
         text_view_creator.isVisible = true
         progress_bar.visibility = View.GONE
     }
 
+    // TODO Строка "Done" должна быть в строковых ресурсах
     private fun setWallpaper(wallpaperManager: WallpaperManager) {
         set.setOnClickListener { view ->
             Toast.makeText(context, "DONE", Toast.LENGTH_SHORT).show()

@@ -56,7 +56,7 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
         }
     }
 
-
+    // TODO опять встречаются !!, проверь проект на их наличие и избавься от форсанврапов
     private fun load(unsplashPhotoAdapter: UnsplashPhotoAdapter) {
         unsplashPhotoAdapter.addLoadStateListener { loadState ->
             binding.apply {
@@ -64,6 +64,17 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
                 this.recyclerView.isVisible = loadState.source.refresh is LoadState.NotLoading
                 buttonRetry.isVisible = loadState.source.refresh is LoadState.Error
                 textViewError.isVisible = loadState.source.refresh is LoadState.Error
+                // TODO Вместо такого условия
+                //                loadState.source.refresh is LoadState.NotLoading &&
+                //                        loadState.append.endOfPaginationReached &&
+                //                        unsplashPhotoAdapter.itemCount < 1
+                //    Можно просто делать переменную isRefresh = loadState.source.refresh is LoadState.NotLoading &&
+                //                    loadState.append.endOfPaginationReached &&
+                //                    unsplashPhotoAdapter.itemCount < 1
+                //    и потом
+                //                recyclerView.isVisible = !isRefresh
+                //                textViewEmpty.isVisible = isRefresh
+                //    так ты сможешь избавиться от излишних условий
                 if (loadState.source.refresh is LoadState.NotLoading &&
                     loadState.append.endOfPaginationReached &&
                     unsplashPhotoAdapter.itemCount < 1
@@ -78,6 +89,8 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
     }
 
     private fun buttonsCategory() {
+        // TODO приводить enum к строке не очень хорошо, потому что есть сразу готовые методы для получения строк
+        //  из него. Например QueryForSearch.D3.name
         binding?.nature?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
             viewModel.searchPhotos(QueryForSearch.D3.toString())

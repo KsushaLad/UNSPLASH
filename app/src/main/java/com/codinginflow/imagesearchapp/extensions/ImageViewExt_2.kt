@@ -7,7 +7,7 @@ import com.codinginflow.imagesearchapp.data.UnsplashPhoto
 
 import kotlinx.android.synthetic.main.fragment_details.view.*
 
-
+// TODO объедини в одном файлк раширения для ImageView
 //Extension UnsplashPhotoAdapter
 fun ImageView.loadingView(photo: UnsplashPhoto) {
     Glide.with(this@loadingView)
