@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearchapp.ui.gallery.holders
+package com.codinginflow.imagesearchapp.ui.gallery.adapter
 
 import androidx.core.view.isVisible
 import androidx.paging.LoadState

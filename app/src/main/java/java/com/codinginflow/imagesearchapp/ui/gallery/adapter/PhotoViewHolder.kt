@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearchapp.ui.gallery.holders
+package com.codinginflow.imagesearchapp.ui.gallery.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.codinginflow.imagesearchapp.data.UnsplashPhoto

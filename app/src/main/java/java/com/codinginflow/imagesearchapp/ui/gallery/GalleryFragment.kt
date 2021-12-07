@@ -26,11 +26,8 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
     UnsplashPhotoAdapter.OnItemClickListener {
 
     private val viewModel by viewModels<GalleryViewModel>()
-
     private var _binding: FragmentGalleryBinding? = null
     private val binding get() = _binding
-
-
     private lateinit var textChangeCountDownJob: Job
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,20 +56,16 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
 
     private fun load(unsplashPhotoAdapter: UnsplashPhotoAdapter) {
         unsplashPhotoAdapter.addLoadStateListener { loadState ->
-            binding.apply {
-                this?.progressBar!!.isVisible = loadState.source.refresh is LoadState.Loading
+            binding?.apply {
+                this.progressBar.isVisible = loadState.source.refresh is LoadState.Loading
                 this.recyclerView.isVisible = loadState.source.refresh is LoadState.NotLoading
                 buttonRetry.isVisible = loadState.source.refresh is LoadState.Error
                 textViewError.isVisible = loadState.source.refresh is LoadState.Error
-                if (loadState.source.refresh is LoadState.NotLoading &&
-                    loadState.append.endOfPaginationReached &&
-                    unsplashPhotoAdapter.itemCount < 1
-                ) {
-                    recyclerView.isVisible = false
-                    textViewEmpty.isVisible = true
-                } else {
-                    textViewEmpty.isVisible = false
-                }
+                val isRefresh = loadState.source.refresh is LoadState.NotLoading &&
+                                    loadState.append.endOfPaginationReached &&
+                                    unsplashPhotoAdapter.itemCount < 1
+                recyclerView.isVisible = !isRefresh
+                                textViewEmpty.isVisible = isRefresh
             }
         }
     }
@@ -80,32 +73,32 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
     private fun buttonsCategory() {
         binding?.nature?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.D3.toString())
+            viewModel.searchPhotos(QueryForSearch.D3.name)
         }
 
         binding?.bus?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.TEXTURES.toString())
+            viewModel.searchPhotos(QueryForSearch.TEXTURES.name)
         }
 
         binding?.car?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.NATURE.toString())
+            viewModel.searchPhotos(QueryForSearch.NATURE.name)
         }
 
         binding?.train?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.FOOD.toString())
+            viewModel.searchPhotos(QueryForSearch.FOOD.name)
         }
 
         binding?.trending?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.TRAVEL.toString())
+            viewModel.searchPhotos(QueryForSearch.TRAVEL.name)
         }
 
         binding?.animals?.setOnClickListener {
             binding?.recyclerView?.scrollToPosition(0)
-            viewModel.searchPhotos(QueryForSearch.ANIMALS.toString())
+            viewModel.searchPhotos(QueryForSearch.ANIMALS.name)
         }
     }
 
@@ -122,18 +115,14 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-
         inflater.inflate(R.menu.menu_gallery, menu)
-
         val searchItem = menu.findItem(R.id.action_search)
         val searchView = searchItem.actionView as SearchView
-
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (::textChangeCountDownJob.isInitialized)
                     textChangeCountDownJob.cancel()
-
-                textChangeCountDownJob = lifecycleScope.launch {
+                    textChangeCountDownJob = lifecycleScope.launch {
                     delay(1500)
                     if (query != null) {
                         viewModel.searchPhotos(query)

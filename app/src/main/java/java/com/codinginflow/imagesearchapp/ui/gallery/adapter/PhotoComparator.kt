@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearchapp.comporator
+package com.codinginflow.imagesearchapp.ui.gallery.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.codinginflow.imagesearchapp.data.UnsplashPhoto

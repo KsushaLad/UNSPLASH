@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
 
     private var navController: NavController? = null
 
-
     @SuppressLint("CommitTransaction", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.findFragmentById((R.id.nav_host_fragment_main))}
 
         val appBarConfiguration = navController.let { it?.let { it1 -> AppBarConfiguration(it1.graph) } }
-        appBarConfiguration?.let { navController.let { it1 -> setupActionBarWithNavController(it1!!, it) } }
+        appBarConfiguration?.let { navController.let { it1 -> it1?.let { it2 ->
+            setupActionBarWithNavController(
+                it2, it)
+        } } }
     }
 
     override fun onSupportNavigateUp(): Boolean {

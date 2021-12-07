@@ -1,8 +1,8 @@
 package com.codinginflow.imagesearchapp.scale
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.ScaleGestureDetector
-
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector.OnScaleGestureListener
 import android.view.View
@@ -14,6 +14,7 @@ class MyScaleGestures(context: Context?) : View.OnTouchListener, OnScaleGestureL
     private var scaleFactor = 0.1f
     private var inScale = false
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouch(view: View?, event: MotionEvent?): Boolean {
         this.view = view
         gestureScale.onTouchEvent(event)

@@ -3,11 +3,11 @@ package com.codinginflow.imagesearchapp.ui.gallery
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import com.codinginflow.imagesearchapp.comporator.PhotoComparator
+import com.codinginflow.imagesearchapp.ui.gallery.adapter.PhotoComparator
 
 import com.codinginflow.imagesearchapp.data.UnsplashPhoto
 import com.codinginflow.imagesearchapp.databinding.ItemUnsplashPhotoBinding
-import com.codinginflow.imagesearchapp.ui.gallery.holders.PhotoViewHolder
+import com.codinginflow.imagesearchapp.ui.gallery.adapter.PhotoViewHolder
 
 class UnsplashPhotoAdapter(val listener: OnItemClickListener) :
     PagingDataAdapter<UnsplashPhoto, PhotoViewHolder>(PhotoComparator()) {

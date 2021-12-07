@@ -33,7 +33,6 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         val wallpaperManager = WallpaperManager.getInstance(requireContext())
         binding.apply {
             val photo = args.photo
-            val path = args.photo.urls.full
             loadingAllInDetailFragment(photo)
             imgImagePreview.setOnTouchListener(MyScaleGestures(requireContext()))
             setWallpaper(wallpaperManager)
@@ -46,12 +45,12 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     private fun loadingAllInDetailFragment(photo: UnsplashPhoto) {
         imgImagePreview.loading(photo)
         text_view_creator.isVisible = true
-        progress_bar.visibility = View.GONE
+        progress_bar.isVisible = false
     }
 
     private fun setWallpaper(wallpaperManager: WallpaperManager) {
         set.setOnClickListener { view ->
-            Toast.makeText(context, "DONE", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, done, Toast.LENGTH_SHORT).show()
             val bitmap = (imgImagePreview.drawable as BitmapDrawable).bitmap
             try {
                 wallpaperManager.setBitmap(bitmap)
